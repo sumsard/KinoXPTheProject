@@ -2,6 +2,7 @@ package view;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
@@ -15,7 +16,7 @@ public class KasseBooking {
 
 
         BorderPane backgroundKasse = new BorderPane();
-        backgroundKasse.setPrefSize(1600, 900);
+        backgroundKasse.setPrefSize(1200, 900);
 
 
         HBox filmContainer = new HBox();
@@ -72,6 +73,13 @@ public class KasseBooking {
             vboxForButtons.getChildren().add(hboxForButtons);
         }
 
+        //SNACKBOX
+        HBox snackBox = new HBox();
+        Label snackQuestion = new Label("Skal der ikke lige en snackbox oveni?");
+        CheckBox snackCheck = new CheckBox("Skal der ikke lige en snackbox oveni?");
+        snackBox.getChildren().addAll(snackQuestion, snackCheck);
+        snackCheck.setVisible(false);
+
 
         Label navn = new Label("Navn: ");
         Label nummer = new Label("Nummer: ");
@@ -103,37 +111,48 @@ public class KasseBooking {
 
         hboxFields.setVisible(false);
 
-
-
-
-
         filmContainer.getChildren().addAll(film1,film2,film3,checkInNmb,phoneNmb,checkInBtn);
 
         vboxForButtons.setVisible(false);
 
+
+
         tid1.setOnAction(event -> {vboxForButtons.setVisible(true);
             hboxFields.setVisible(true);
+            snackCheck.setVisible(true);
         });
         tid2.setOnAction(event -> {vboxForButtons.setVisible(true);
-            hboxFields.setVisible(true);});
+            hboxFields.setVisible(true);
+            snackCheck.setVisible(true);
+        });
+
         tid3.setOnAction(event -> {vboxForButtons.setVisible(true);
-            hboxFields.setVisible(true);});
+            hboxFields.setVisible(true);
+            snackCheck.setVisible(true);
+        });
         tid4.setOnAction(event -> {vboxForButtons.setVisible(true);
-            hboxFields.setVisible(true);});
+            hboxFields.setVisible(true);
+            snackCheck.setVisible(true);
+        });
         tid5.setOnAction(event -> {vboxForButtons.setVisible(true);
-            hboxFields.setVisible(true);});
+            hboxFields.setVisible(true);
+            snackCheck.setVisible(true);});
         tid6.setOnAction(event -> {vboxForButtons.setVisible(true);
-            hboxFields.setVisible(true);});
+            hboxFields.setVisible(true);
+            snackCheck.setVisible(true);
+        });
 
         tilføj.setOnAction(event -> {vboxForButtons.setVisible(false);
             hboxFields.setVisible(false);
             filmTid.setVisible(false);
             sæde.setText("");
             række.setText("");
+
         });
 
+
         VBox tid = new VBox();
-        tid.getChildren().addAll(filmContainer,filmTid,vboxForButtons,hboxFields);
+        tid.getChildren().addAll(filmContainer,filmTid,vboxForButtons,snackCheck,hboxFields);
         backgroundKasse.setCenter(tid);
         Scene scene = new Scene(backgroundKasse);
 
