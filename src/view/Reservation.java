@@ -1,5 +1,6 @@
 package view;
 
+import controller.Controller;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -64,14 +65,14 @@ public class Reservation {
         bp.setTop(headline);
         bp.setPadding(new Insets(25,2,25,2));
 
-        Scene scene = new Scene(bp, 1600, 900);
+        Scene scene = new Scene(bp, 1200, 900);
 
 
         //-----------------------------------Event Handlers------------------------------------//
 
-        loguotButton.setOnAction(e -> {
+        Controller controller = new Controller();
 
-        });
+        loguotButton.setOnAction(e -> controller.logoutButtonPressed(stage));
 
         orderticketButton.setOnAction(e -> {
 

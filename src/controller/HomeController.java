@@ -19,6 +19,7 @@ public class HomeController extends Application {
 
             stage.setTitle("Login");
             stage.setScene(login.loginScene(stage));
+            stage.centerOnScreen();
             stage.show();
 
         } catch (Exception e) {
