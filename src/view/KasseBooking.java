@@ -20,6 +20,12 @@ public class KasseBooking {
 
         HBox filmContainer = new HBox();
 
+        TextField phoneNmb = new TextField();
+        phoneNmb.setPromptText("Telefonnummer");
+        Label checkInNmb = new Label("Telefonnumer");
+        Button checkInBtn = new Button("Tjek ind");
+        checkInBtn.setOnAction(event -> {phoneNmb.clear();});
+
         Button tid1 = new Button("12:00");
         Button tid2 = new Button("14:30");
         Button tid3 = new Button("17:00");
@@ -101,7 +107,7 @@ public class KasseBooking {
 
 
 
-        filmContainer.getChildren().addAll(film1,film2,film3);
+        filmContainer.getChildren().addAll(film1,film2,film3,checkInNmb,phoneNmb,checkInBtn);
 
         vboxForButtons.setVisible(false);
 
