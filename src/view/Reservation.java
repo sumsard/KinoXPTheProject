@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -25,16 +26,23 @@ public class Reservation {
         Button enlargeTextButton = new Button("Forstør tekst");
         Button cancelTicketButton = new Button("Afbestil");
         Label headline = new Label("MainScene");
+        TextArea newsSection = new TextArea();
         headline.setAlignment(Pos.CENTER);
 
 
         VBox buttonBox = new VBox(orderticketButton, cancelTicketButton, enlargeTextButton, loguotButton);
         buttonBox.setSpacing(50);
 
+        newsSection.setWrapText(true);
+        newsSection.setText("\"Spodermen: 420 Blaze it\" - Kommer den 15/11/2017");
+        newsSection.setMinSize(600.0,800.0);
+        newsSection.setMaxSize(600.0, 800.0);
+
         TableView reservationView = new TableView();
         reservationView.setEditable(false);
-        reservationView.setMinSize(800.0,800.0);
-        reservationView.setMaxSize(800.0, 800.0);
+        reservationView.setMinSize(600.0,800.0);
+        reservationView.setMaxSize(600.0, 800.0);
+
         /* Her skal vores tableview være Observable så det opdatere når kunden logger ind*/
 
         //Der er ikke lavet andet en reservationer på start siden da det var det eneste vores opagve lød på.
@@ -50,10 +58,11 @@ public class Reservation {
 
 
 
-        bp.setCenter(reservationView);
+        bp.setCenter(newsSection);
+        bp.setRight(reservationView);
         bp.setLeft(buttonBox);
         bp.setTop(headline);
-        bp.setPadding(new Insets(25));
+        bp.setPadding(new Insets(25,2,25,2));
 
         Scene scene = new Scene(bp, 1600, 900);
 
