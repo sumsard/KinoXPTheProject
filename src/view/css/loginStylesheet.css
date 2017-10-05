@@ -28,6 +28,11 @@
     -fx-text-alignment: center;
 }
 
-#loginLabel {
-    -fx-font-weight: bold;
+
+#signUpNewUser {
+    -fx-min-width: 300;
+    -fx-background-color: lightblue;
+    -fx-border-color: black;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
 }

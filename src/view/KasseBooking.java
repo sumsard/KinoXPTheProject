@@ -15,7 +15,7 @@ public class KasseBooking {
 
 
         BorderPane backgroundKasse = new BorderPane();
-        backgroundKasse.setPrefSize(1600, 900);
+        backgroundKasse.setPrefSize(1200, 900);
 
 
         HBox filmContainer = new HBox();

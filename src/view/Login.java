@@ -15,12 +15,6 @@ import model.User;
 
 public class Login {
 
-
-    // Controller class instance
-    Controller controller = new Controller();
-
-
-
     public Scene loginScene(Stage stage) {
 
         GridPane gp = new GridPane();
@@ -39,7 +33,6 @@ public class Login {
 
         Button loginButton = new Button("Login");
         Label or = new Label("or");
-        or.setAlignment(Pos.CENTER_RIGHT);
         Button signUpButton = new Button("Sign up");
 
         gp.add(login,2,1);
@@ -63,6 +56,10 @@ public class Login {
         Events
          */
 
+        // Controller class instance
+        Controller controller = new Controller();
+
+
         loginButton.setOnAction(event -> {
             try {
                 User user = new User(emailText.getText(), passwordField.getText());
@@ -72,7 +69,11 @@ public class Login {
             }
         });
 
-        signUpButton.setOnAction(event -> controller.signUpButtonPressed(stage));
+        try {
+            signUpButton.setOnAction(event -> controller.signUpButtonPressed(stage));
+        } catch (Exception e) {
+            System.out.println(e);
+        }
 
         return loginScene;
     }
