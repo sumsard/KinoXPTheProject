@@ -5,4 +5,7 @@ package view;
  */
 public class CheckIn {
 
+    String navn = "Rasmus";
+
+
 }
