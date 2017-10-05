@@ -2,12 +2,14 @@ package view;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 /**
@@ -55,7 +57,10 @@ public class Reservation {
         bp.setTop(headline);
         bp.setPadding(new Insets(25));
 
-        Scene scene = new Scene(bp, 1600, 900);
+        //Scene scene = new Scene(bp, 1200, 700);
+        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+        Scene scene = new Scene(bp, screenBounds.getWidth(), screenBounds.getHeight());
+
 
 
         //-----------------------------------Event Handlers------------------------------------//
